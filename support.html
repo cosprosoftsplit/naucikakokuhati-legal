@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podrska - Nauci Kako Kuhati</title>
+    <style>
+        :root {
+            --orange: #EA580C;
+            --orange-light: #FB923C;
+            --orange-dark: #C2410C;
+            --orange-bg: #FFF7ED;
+            --text: #1C1917;
+            --text-light: #78716C;
+            --white: #FFFFFF;
+            --border: #E7E5E4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            text-align: center;
+            padding: 12px 20px;
+            background: var(--orange-bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 12px;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background: var(--orange-bg);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-card .icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .contact-card h2 {
+            font-size: 1.5rem;
+            color: var(--orange);
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .contact-card a.email-btn {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .contact-card a.email-btn:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+        }
+
+        /* FAQ */
+        .faq-section h2 {
+            font-size: 1.6rem;
+            color: var(--orange);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 18px 20px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--orange-bg);
+        }
+
+        .faq-question .arrow {
+            font-size: 1.2rem;
+            color: var(--orange);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 20px 18px;
+            color: #44403C;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        /* Restore Purchases */
+        .restore-section {
+            background: var(--orange-bg);
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-top: 36px;
+        }
+
+        .restore-section h2 {
+            font-size: 1.3rem;
+            color: var(--orange);
+            margin-bottom: 14px;
+        }
+
+        .restore-steps {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .restore-steps li {
+            counter-increment: step;
+            padding: 8px 0;
+            padding-left: 36px;
+            position: relative;
+            color: #44403C;
+        }
+
+        .restore-steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            background: var(--orange);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            top: 10px;
+        }
+
+        footer {
+            background: var(--text);
+            color: var(--white);
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--orange-light);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Podrska</h1>
+        <p>Nauci Kako Kuhati</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Pocetna</a>
+        <a href="privacy.html">Pravila Privatnosti</a>
+    </nav>
+
+    <div class="content">
+
+        <div class="contact-card">
+            <div class="icon">📬</div>
+            <h2>Trebate pomoc?</h2>
+            <p>Javite nam se i odgovorit cemo u najkracem mogucemu roku.</p>
+            <a href="mailto:info@softsplit.hr" class="email-btn">info@softsplit.hr</a>
+        </div>
+
+        <div class="faq-section">
+            <h2>Cesto postavljena pitanja</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Sto je Nauci Kako Kuhati?
+                    <span class="arrow">&#9660;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Nauci Kako Kuhati je mobilna aplikacija koja vas uci kuhati kroz 48 dnevnih lekcija. Svaka lekcija sadrzi teoriju, praktican recept i korisne savjete. Od osnova poput rezanja i kuhanja do naprednih tehnika - postepeno gradite svoje kulinarske vjestine.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Kako funkcioniraju dnevne lekcije?
+                    <span class="arrow">&#9660;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Svaki dan otkljucava se nova lekcija. Svaka lekcija pokriva odredjenu temu kuhanja s objasnjenjima, receptima i prakticnim savjetima. Lekcije se otkljucavaju redom kako biste postupno gradili znanje od osnova prema slozenijem sadrzaju.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Sto je streak i kako ga odrzavam?
+                    <span class="arrow">&#9660;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Streak predstavlja uzastopne dane u kojima ste koristili aplikaciju. Svaki dan kada otvorite aplikaciju i zavrsite lekciju, vas streak raste. Ako preskocite dan, streak se resetira. To je odlican nacin za odrzavanje motivacije!
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Sto ukljucuje Premium pretplata?
+                    <span class="arrow">&#9660;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Premium pretplata otkljucava sve 48 lekcija, napredne recepte, posebne kuharske izazove i uklanja sva ogranicenja besplatne verzije. Mozete uzivati u kompletnom kuharskom tecaju bez ogranicenja.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Sto su kuharski izazovi?
+                    <span class="arrow">&#9660;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Kuharski izazovi su prakticni zadaci koji prate svaku lekciju. Izazov vas potice da isprobate recept, fotografirate rezultat i zabiljezite svoje iskustvo. Fotografije se pohranjuju lokalno na vasem uredaju u vasoj osobnoj galeriji.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Jesu li moji podaci sigurni?
+                    <span class="arrow">&#9660;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Da! Svi vasi podaci, ukljucujuci napredak i fotografije, pohranjuju se iskljucivo na vasem uredaju. Ne prikupljamo nikakve osobne podatke i ne koristimo analitiku. Vasa privatnost nam je prioritet.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="restore-section">
+            <h2>Kako vratiti kupnju</h2>
+            <p style="color: #44403C; margin-bottom: 14px;">Ako ste vec kupili Premium pretplatu i zelite je vratiti (npr. nakon ponovne instalacije aplikacije):</p>
+            <ol class="restore-steps">
+                <li>Otvorite aplikaciju Nauci Kako Kuhati</li>
+                <li>Idite na stranicu Premium sadrzaja</li>
+                <li>Pritisnite gumb "Vrati kupnju" (Restore Purchases)</li>
+                <li>Potvrdite s vasim Apple ID-jem ako se zatrazi</li>
+                <li>Vas Premium pristup bit ce automatski obnovljen</li>
+            </ol>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 14px;">Ako imate problema s vraanjem kupnje, kontaktirajte nas na <a href="mailto:info@softsplit.hr" style="color: var(--orange);">info@softsplit.hr</a>.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SoftSplit d.o.o. &middot; <a href="index.html">Pocetna</a> &middot; <a href="privacy.html">Pravila Privatnosti</a></p>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

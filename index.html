@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nauci Kako Kuhati - Learn to Cook in 48 Days</title>
+    <style>
+        :root {
+            --orange: #EA580C;
+            --orange-light: #FB923C;
+            --orange-dark: #C2410C;
+            --orange-bg: #FFF7ED;
+            --text: #1C1917;
+            --text-light: #78716C;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+
+        .hero-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .app-store-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--orange);
+            text-decoration: none;
+            padding: 14px 36px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .app-store-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--orange);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
+
+        .feature-card {
+            background: var(--orange-bg);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-card .icon {
+            font-size: 40px;
+            margin-bottom: 14px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--orange-dark);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--orange-bg);
+            padding: 60px 20px;
+        }
+
+        .how-it-works .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 36px;
+            color: var(--orange);
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .step-number {
+            background: var(--orange);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .step-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer a {
+            color: var(--orange-light);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-bottom: 16px;
+        }
+
+        .footer-company {
+            font-size: 0.85rem;
+            color: #A8A29E;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .features h2,
+            .how-it-works h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-icon">👨‍🍳</div>
+        <h1>Nauci Kako Kuhati</h1>
+        <p class="tagline">Naucite kuhati u 48 dana</p>
+        <a href="https://apps.apple.com/app/id0000000000" class="app-store-btn">Preuzmi na App Store</a>
+    </section>
+
+    <section class="features">
+        <h2>Sto vas ceka</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">📖</div>
+                <h3>48 Lekcija</h3>
+                <p>Svaki dan nova lekcija kuhanja - od osnova do naprednih tehnika.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔥</div>
+                <h3>Dnevni Streak</h3>
+                <p>Odrzavajte streak i pratite svoj napredak kroz cijeli tecaj.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🏆</div>
+                <h3>Kuharski Izazovi</h3>
+                <p>Isprobajte recepte, fotografirajte rezultat i podijelite svoj uspjeh.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📸</div>
+                <h3>Galerija</h3>
+                <p>Sacuvajte fotografije svojih kulinarskih kreacija.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⭐</div>
+                <h3>Premium Sadrzaj</h3>
+                <p>Otkljucajte napredne lekcije i ekskluzivne recepte.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎓</div>
+                <h3>Certifikat</h3>
+                <p>Zavrsite tecaj i dobijte virtualni certifikat kuharskog znanja.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Kako funkcionira</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                    <h3>Otvorite dnevnu lekciju</h3>
+                    <p>Svaki dan dobivate novu lekciju s teorijom, receptima i savjetima.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                    <h3>Ucite i vjezbjajte</h3>
+                    <p>Proucite tehnike i isprobajte recepte u vlastitoj kuhinji.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                    <h3>Zavrsavajte izazove</h3>
+                    <p>Fotografirajte svoja jela i pratite napredak kroz aplikaciju.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-text">
+                    <h3>Postanite kuhar</h3>
+                    <p>Nakon 48 dana ovladajte osnovnim i naprednim kulinarskim vjestinama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Pravila Privatnosti</a>
+            <a href="support.html">Podrska</a>
+        </div>
+        <p class="footer-company">SoftSplit d.o.o. &middot; Split, Croatia</p>
+        <p class="footer-company">&copy; 2026 SoftSplit d.o.o. Sva prava zadrzana.</p>
+    </footer>
+
+</body>
+</html>
